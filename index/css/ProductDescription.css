@@ -221,19 +221,19 @@ to {height:3.5rem;}
 
 }
 
-.price
+.name
 {
     font-size: 0.3rem;
-    color: red;
     display: block;
     float: top;
     padding-top: 0.1rem;
     padding-left: 1.7rem;
 }
 
-.stock
+.price
 {
     font-size: 0.2rem;
+    color:red;
     display: block;
     float: top;
     padding-left: 1.7rem;
@@ -290,4 +290,91 @@ to {height:3.5rem;}
     position: fixed;
     bottom: 0;
     width: 100%;
+    height: 0.8rem;
+}
+
+.standard-title
+{
+    display: block;
+    float: left;
+    position: relative;
+    left: 0.5rem;
+    margin-top: 0.2rem;
+}
+
+.standard-detail
+{
+    display: block;
+    float: left;
+    position: relative;
+    padding-left: 2.3rem;
+    margin-top: 0.2rem;
+}
+
+.number-title
+{
+    display: block;
+    float: left;
+    position: relative;
+    left: 0.5rem;
+    margin-top: 0.2rem;   
+}
+
+
+.number-control
+{
+    margin-top: 0.1rem;
+    position: relative;
+    float: right;
+    right: 1.5rem;
+    display:block;
+    letter-spacing: 0;
+    width: 2rem;
+    overflow: hidden;
+    border: 1px solid #b3b3b3;
+}
+
+.decrease
+{
+    display: block;
+    line-height: 0.4rem;
+    float: left;
+    width: 0.4rem;
+    height: 0.4rem;
+    text-align: center;
+    border-right: 1px solid #b3b3b3;
+    background-color: white;
+    font-weight: 900;
+}
+
+.num
+{
+    display: block;
+    float: left;
+    width: 1.2rem;
+    height: 0.4rem;
+    text-align: center;
+}
+
+.increase
+{
+    display: inline-block;
+    text-align: center;
+    line-height: 0.4rem;
+    font-weight: 900;
+    float: left;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-left: 1px solid #b3b3b3;
+    background-color: white;
+    margin: 0px;
+}
+
+.ok-button
+{
+    width: 100%;
+    height: 0.7rem;
+    background-color: #8e3030;
+    line-height: 100%;
+    color: white;
 }
