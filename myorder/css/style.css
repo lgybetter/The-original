@@ -1,0 +1,175 @@
+/*		all tag 	*/
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: "Microsoft Yahei"
+}
+html,body {
+	height: 100%;
+}
+
+html {
+    font-size: 15.625vw;
+}
+
+@media screen and (min-width: 640px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+/*  顶部返回块  */
+.head {
+	position: relative;
+	z-index: 999;
+	width: 100%;
+	height: 44px;
+	background: #711515;
+}
+.return {
+	float: left;
+	width: 24px;
+	height: 24px;
+	padding: 10px 15px;
+}
+
+.return img {
+	height: 100%;
+	float: left;
+}
+
+/*  加载动画  */
+.loading {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	max-width: 640px;
+	min-width: 320px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 899;
+	display: none;
+	background:	red;
+	opacity: 0.3;
+	top: 44px;
+
+	font-size: .5rem;
+	text-align: center;
+}
+
+/*  主布局  */
+.main {
+	position: relative;
+	z-index: 898;
+	display: block;
+	height: 100%;
+	background: url("../images/bg.jpg") repeat-y center center;
+	background-size: 100% ;	
+	max-width: 640px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+
+/*  内容区  */
+.content {
+	padding-top: .18rem;
+	background-color: rgba(0, 0, 0, 0); 
+	width: 100%;
+}
+
+ul,li {
+	list-style-type:none;
+}
+
+.item {
+	background: #fff;
+	height: 2.74rem;
+	padding: 0 .26rem;
+	margin-bottom: .18rem;
+	position: relative;
+}
+.itemTime {
+	height: .56rem;
+	line-height: .56rem;
+}
+.itemTime i{
+	font-style: normal;
+	font-size: .25rem;
+}
+.itemTime,.time {
+	font-size: .25rem;
+	color: rgba(0, 0, 0, 0.31);
+}
+.itemDetail {
+	height: 2rem;
+	padding: .18rem 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.31);
+	position: relative;
+}
+.itemPic {
+	position: relative;
+	float: left;
+	width: 1.59rem;
+	height: 1.59rem;
+	padding: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.42);
+	margin-right: .4rem;
+}
+.itemPic > img {
+	width: 100%;
+}
+.itemInfo {
+	height: 2rem;
+}
+.itemInfoOne {
+	font-size: .25rem;
+	color: rgba(0, 0, 0, 0.31);
+	height: 33.33%;
+}
+
+.itemInfoOne i{
+	font-style: normal;
+	font-size: .25rem;
+}
+
+.itemMoney {
+	line-height: .4rem;	
+}
+.itemMoneyInsert {
+	color: rgba(255, 0, 0, 0.62);
+}
+
+.itemStatus {
+	line-height: .4rem;
+}
+
+.itemStatusInsert {
+	color: rgba(255, 0, 0, 0.62);
+}
+
+.itemStatus span img {
+	width: .37rem;
+}
+.RMB {
+	background: #10D810;
+	border-radius: 20%;
+	font-size: .15rem;
+	color: white;
+	width: 11.51vw;
+
+}
+
+/*  底部字样  */
+.footer {
+	background: #fff;
+	font-size: .3506rem;
+	color: rgba(0, 0, 0, 0.31);
+	text-align: center;
+	line-height: 332%;
+	width: 100%;
+	height: 10.98vh;
+	margin-top: 3vh;
+}
+

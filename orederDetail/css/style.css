@@ -1,0 +1,383 @@
+/*		all tag 	*/
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: "Microsoft Yahei";	
+}
+html,body {
+	background: #ccc;
+}
+
+html {
+    font-size: 15.625vw;
+}
+
+@media screen and (min-width: 640px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+/*  顶部返回块  */
+.head {
+	position: relative;
+	z-index: 999;
+	width: 100%;
+	height: 44px;
+	background: #711515;
+}
+.return {
+	float: left;
+	width: 24px;
+	height: 24px;
+	padding: 10px 15px;
+}
+
+.return img {
+	height: 100%;
+	float: left;
+}
+
+/*  加载动画  */
+.loading {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	max-width: 640px;
+	min-width: 320px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 899;
+	display: none;
+	background:	red;
+	opacity: 0.3;
+	top: 44px;
+
+	font-size: .5rem;
+	text-align: center;
+}
+
+/*  主布局  */
+.main {
+	position: relative;
+	z-index: 898;
+	display: block;
+	height: 100%;
+	background: url("../images/bg.jpg") repeat-y center center;
+	background-size: 100% ;	
+	max-width: 640px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+
+.revInfo-list {
+	margin-top: .18rem;
+	padding: 0 .27rem;
+	background: #fff;
+	height: 2.3rem;
+	color: rgba(0, 0, 0, 0.49);
+	position: relative;
+}
+.revInfo-list * {
+	line-height: .52rem;
+	height: .52rem;
+}
+.revName,.revPhoneNum,.revAdd{
+	font-size: .25rem;
+	line-height: .7rem;
+	height: .52rem;
+}
+.revTitle {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.49);
+	position: relative;
+	line-height: .52rem;
+	height: .52rem;
+}
+.revTitle > i {
+	font-style: normal;
+	font-size: .25rem;
+	line-height: .52rem;
+	height: .52rem;
+	float: left;
+}
+.revTitle > span {
+	color: #ff2626;
+	font-size: .2rem;
+	line-height: 5.08vh;
+	text-align: right;
+	position: absolute;
+	right: .5rem;
+}
+.revName > i {
+	font-style: normal;
+	font-size: .25rem;
+	line-height: 5.08vh;
+	height: 5.08vh;
+}
+.revPhoneNum > i {
+	font-style: normal;
+	font-size: .25rem;
+	line-height: 5.08vh;
+	height: 5.08vh;
+}
+.revAdd > i {
+	font-style: normal;
+	font-size: .25rem;
+	line-height: 5.08vh;
+	height: 5.08vh;
+}
+/*.revPhoneNum > .phoneNum{
+	font-size: .25rem;
+	line-height: 5.08vh;
+	height: 5.08vh;
+	font-family: Verdana;
+}*/
+
+.statusInfo {
+	margin-top: .18rem;
+	padding: 0 .27rem;
+	background: #fff;
+	height: 2.17rem;
+	color: rgba(0, 0, 0, 0.49);
+	position: relative;
+}
+.statusTitle {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.49);
+	position: relative;
+	height: .52rem;
+}
+.statusTitle > i {
+	font-style: normal;
+	font-size: .25rem;
+	line-height: .52rem;
+	height: .52rem;
+	float: left;
+	margin-right: 70%;
+	width: 30%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+}
+
+.cancleOrder {
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.49);
+	font-size: .2rem;
+	line-height: .3rem;
+	height: .3rem;
+	text-align: right;
+	position: absolute;
+	right: 0;
+	top: .1rem;
+	border: 1px solid #ccc;
+	display: block;
+	border-radius: 8px;
+}
+
+.cancleOrder > span {
+	margin: 0 10px;
+}
+
+.status-row {
+	padding: 0 .08rem;
+	position: relative;
+}
+
+.status-row-inner {
+	position: relative;
+	float: left;
+	width: 25%;
+	margin-top: .58rem;
+	padding-top: .3rem;
+	border-top: 2px solid #ccc;
+	text-align: center;
+}
+
+.status-row-inner > h4 {
+	font-size: .2rem;
+}
+
+.status-row-inner > img {
+	width: .5rem;
+}
+.status-img {
+	position: absolute;
+	top: -.25rem;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.itemsInfo-list {
+	margin-top: .18rem;
+	padding: 0 .27rem;
+	background: #fff;
+	height: auto;
+	color: rgba(0, 0, 0, 0.49);
+	position: relative;
+}
+.itemsTitle {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.49);
+	position: relative;
+	height: .52rem;
+}
+.itemsTitle > i {
+	font-style: normal;
+	font-size: .25rem;
+	line-height: .52rem;
+	height: .52rem;
+	float: left;
+}
+.oneItem {
+	position: relative;
+	margin: .18rem 0;
+	height: auto;
+}
+.oneItem > .itemPic {
+	position: relative;
+	float: left;
+	width: 1.1rem;
+	height: 1.1rem;
+	padding: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.42);
+	margin-right: .22rem;
+}
+.oneItem > .itemPic > img {
+	width: 100%;
+}
+.itemInfo {
+	height: 1.3rem;
+}
+
+.row > i {
+	font-style: normal;
+	font-size: .25rem;
+}
+.itemInfo > h4 {
+	font-size: .25rem;
+	height: 40%;
+}
+
+.itemInfo .single-line {
+	position: relative;
+	height: 30%;
+	line-height: .3rem;
+}
+
+.itemInfo .single-line p{
+	float: left;
+	font-size: .23rem;
+}
+
+.itemInfo .single-line span{
+	font-size: .23rem;
+}
+
+.itemInfo > p {
+	font-size: .23rem;
+	height: 30%;
+	line-height: .5rem;
+} 
+
+.itemInfo > p > span{
+	font-size: .23rem;
+	color: rgba(255, 0, 0, 0.62);
+} 
+
+.itemsMoney {
+	border-top: 1px solid rgba(0, 0, 0, 0.42);
+	padding: .15rem 0;
+	height: 1.2rem;
+}
+.itemsMoney .row {
+	padding-bottom: .1rem;
+	height: .3rem;
+}
+
+.itemsMoney .row i{
+	float: left;
+}
+.itemsMoney .row span{
+	float: right;
+	font-style: normal;
+	font-size: .25rem;
+
+}
+
+
+.orderInfo-list {
+	margin-top: .18rem;
+	padding: 0 .27rem;
+	background: #fff;
+	height: 1.56rem;
+	color: rgba(0, 0, 0, 0.49);
+	position: relative;
+}
+.orderTitle {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.49);
+}
+.orderTitle,.orderTime,.orderNum {
+	height: .52rem;
+}
+.orderInfo-list i {
+	font-style: normal;
+	font-size: .25rem;
+	line-height: .52rem;
+	float: left;
+	position: relative;
+}
+
+.orderTime > span{
+	margin-left: 10px;
+	font-style: normal;
+	font-size: .25rem;
+	line-height: .52rem;
+	color: #ccc;
+	float: left;
+}
+.orderNum > span{
+	margin-left: 10px;
+	font-style: normal;
+	font-size: .25rem;
+	line-height: .52rem;
+	color: #ccc;
+	float: left;
+}
+
+.footer {
+	margin-top: .25rem; 
+	height: .8rem;
+	background: #fff;
+}
+
+.wuliuDetail {
+	display: block;
+	float: right;
+	margin-right: .3rem;
+	margin-top: .2rem;
+	font-size: .2rem;
+	line-height: .4rem;
+	height: .4rem;
+	color: rgba(0, 0, 0, 0.49);
+	text-decoration: none;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+}
+.wuliuDetail > span {
+	margin: 0 10px;
+}
+.delOrder {
+	display: block;
+	float: right;
+	margin-right: .3rem;
+	margin-top: .2rem;
+	font-size: .2rem;
+	line-height: .4rem;
+	height: .4rem;
+	color: rgba(0, 0, 0, 0.49);
+	text-decoration: none;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+}
+.delOrder > span {
+	margin: 0 10px;
+}
