@@ -24,8 +24,8 @@
 			<ul>
             	<li class="ui-list-item">
                 	<div class="ui-list-item-inner">
-                		<div class="item-select">
-                			<img src="images/light.png" height="100%" width="100%">
+                		<div class="item-select" >
+                			<div id="1" onclick="javascript:selectItem(this);"></div>
                 		</div>
 	                    <a href="product-655078-90301321.html?rbc=url_cart" class="ui-list-item-thumb">
 	                        <img src="images/pro-img.jpg" data-brandlazy="true" style="display: inline;">
@@ -58,8 +58,8 @@
             	</li>
             	<li class="ui-list-item">
                 	<div class="ui-list-item-inner">
-                		<div class="item-select">
-                			<img src="images/light.png" height="100%" width="100%">
+                		<div class="item-select" >
+                			<div id="2" onclick="javascript:selectItem(this);"></div>
                 		</div>
 	                    <a href="product-655078-90301321.html?rbc=url_cart" class="ui-list-item-thumb">
 	                        <img src="images/pro-img.jpg" data-brandlazy="true" style="display: inline;">
@@ -119,6 +119,11 @@
     	</div>
     </div>
     <script type="text/javascript">
+    	var selectFlag = new Array();
+    	for(var i = 0; i < 10; i ++)
+    	{
+    		selectFlag[i] = true;
+    	}
     	function openNewDiv() {
             var windowHeight=document.body.scrollHeight;
             var modal = document.getElementById("modalDiv");
@@ -133,6 +138,20 @@
         function dismissModal() {
             document.getElementById("modalDiv").style.display="none";
             document.getElementById("modal-delete-box").style.display="none";
+        }
+        function selectItem(e){
+        	// console.log(e.id);
+        	var select = document.getElementById(e.id);
+        	if(selectFlag[e.id] == true)
+        	{
+        		select.style.background = "#" + "7bbd24";
+        		selectFlag[e.id] = false;
+        	}
+        	else
+        	{
+        		select.style.background = "white";
+        		selectFlag[e.id] = true;
+        	}
         }
     </script>
 </body>
