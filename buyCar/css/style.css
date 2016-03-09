@@ -316,6 +316,15 @@ a {
 	height: 1.8rem;
 	background-color: white;
 	border-radius: 0.1rem;
+	animation:boxmovein 0.3s infinite;
+    animation-iteration-count: 1;
+
+}
+
+@keyframes boxmovein
+{
+from {height:1rem;width:2.5rem;}
+to {height:1.8rem;width: 4.5rem;}
 }
 
 .warnMsg

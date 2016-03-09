@@ -21,8 +21,8 @@
 	</div>
 	<div class="main">
 		<div class="content">
-			<ul>
-            	<li class="ui-list-item">
+			<ul id="shop_car">
+            	<!-- <li class="ui-list-item">
                 	<div class="ui-list-item-inner">
                 		<div class="item-select" >
                 			<div id="1" onclick="javascript:selectItem(this);"></div>
@@ -47,8 +47,8 @@
 		                        </a>
 		                    </div>
 		                    <a href="javascipt:void(0);" class="close" onclick="openNewDiv()">
-		                        		<img src="images/del.png">
-		                        	</a>
+                        		<img src="images/del.png">
+                        	</a>
 	                        <a href="product-655078-90301321.html?rbc=url_cart" class="price">
 	                            <span class="original-price">￥99.00</span>
 	                            <del>￥120.00</del>
@@ -89,7 +89,7 @@
 	                        </a>
 	                    </div>
                 	</div>
-            	</li>
+            	</li> -->
             </ul>
 		</div>
 		<div class="extraInfo"></div>
@@ -153,6 +153,147 @@
         		selectFlag[e.id] = true;
         	}
         }
+        var data = {
+			goods: {
+				"000000": { name: "松子", price: 199,  num: 3, size: "5斤/箱", price_del: 120, id: 1},
+				"000001": { name: "榛子", price: 299,  num: 6, size: "5斤/箱", price_del: 120, id: 2},
+				"000002": { name: "瓜子", price: 949,  num: 1, size: "5斤/箱", price_del: 120, id: 3},
+				"000003": { name: "奶酥", price: 99,  num: 7, size: "5斤/箱", price_del: 120, id: 4},
+				"000004": { name: "奶豆", price: 929,  num: 9, size: "5斤/箱", price_del: 120, id: 5}
+			}
+		};
+        var object = {
+        	$: function(id) {
+			return document.getElementById(id);
+			},
+			json: {},
+			// htmlBtn: function(num, id) {
+			// 	if (!num) {
+			// 		return '<a href="javascript:" class="cho_btn" name="choOpt" title="购买" rel="1" id="'+ id +'">购买</a>';  
+			// 	} else {
+			// 		return '<span class="cho_nums">' +
+			// 				'<a href="javascript:" class="cho_desc" name="choOpt" title="减少一份" rel="'+ (num-1) +'" id="'+ id +'"></a>' +
+			// 				'<input class="cho_input" name="choInput" value="' + num + '" id="'+ id +'" title="修改数量" />' +
+			// 				'<a href="javascript:" class="cho_asc" name="choOpt" title="增加一份" rel="'+ (num+1) +'" id="'+ id +'"></a>' +
+			// 			'</span>';	
+			// 	}
+			// },
+			//列表HTML
+			htmlList: function() {
+				var json = this.json.goods, html = "";
+				for (id in json) { 
+					// var cl = "";
+					// if (json[id].num) {
+					// 	cl = "cho_list_on";
+					// 	choosed ++ ;
+					// } else {
+					// 	if (!window.XMLHttpRequest) {
+					// 		cl = "cho_list_hover";
+					// 	}	
+					// }
+					// html += '<ul class="fix cho_list '+ cl +'">' +
+					// 	'<li class="cho_list_li">'+ json[id].name + '</li>' +
+					// 	'<li class="cho_list_li tc g6">'+ json[id].price + json[id].units +'</li>' +
+					// 	'<li class="cho_list_li tc">'+ this.htmlBtn(json[id].num, id) +'</li>' +
+					// '</ul>';
+
+					html += '<li class="ui-list-item">' + 
+						'<div class="ui-list-item-inner">'+
+							'<div class="item-select">' + 
+								'<div id="' + json[id].id + '" onclick = "javascript:selectItem(this);">' + 
+								'</div>' +
+							'</div>' + 
+							'<a href="" class="ui-list-item-thumb">' +
+								'<img src = "images/pro-img.jpg" data-brandlazy="true" style="display:inline;">' +
+							'</a>' +
+							'<div class="ui-list-item-info">' +
+								'<a href="" class="meta">' +
+									'<h4 class="title">' + json[id].name + '</h4>' +
+									'<p>' + '规格：' + json[id].size + '</p>' +
+								'</a>' +
+								'<div class="stock clearfix">' +
+									'<a href="" class="ui-button addBtn" id="' + id + '" rel="'+ (json[id].num+1) +'">' +
+										'<img src="images/add.png">' +
+									'</a>' +
+									'<span>' + json[id].num + '</span>' +
+									'<input class="amount-num" type="text" readonly="readonly" value="'+ json[id].num +'" name="num" id="'+ id + '">' +
+									'<a href="" class="ui-button moveBtn" id="' + id +'" rel="'+ (json[id].num-1) +'">' +
+										'<img src = "images/move.png">' +
+									'</a>' +
+								'</div>' +
+								'<a href="javascript:void(0);" class="close" onclick="openNewDiv">' +
+									'<img src = "images/del.png">' +
+								'</a>' +
+								'<a href="" class="price">' +
+									'<span class="original-price">' + '￥' +json[id].price + '</span>' +
+									'<del>' + '￥' + json[id].price_del +'</del>'
+								'</a>' +
+							'</div>' +
+						'</div>' +
+					'</li>';
+				}
+				return html;
+			},
+			
+			eventBind: function() {
+				var self = this;
+				// var add = document.getElementById("addBtn") , add_length = add.length;
+				// var move = document.getElementById("moveBtn") , move_length = move.length;
+				var oA = document.getElementsByTagName("a"), oA_length = oA.length;
+				var oInput = document.getElementsByTagName("input"), oInput_length = oInput.length;
+				// var input = document.getElementById("input_num") , input_length = input.length;
+				
+				for (var i=0; i<oA_length; i+=1) {
+					oA[i].onclick = function() {
+						var id = this.id, num = parseInt(this.rel, 10) || 0;
+						if(num >= 0){
+							self.json.goods[id].num = num;
+							self.htmlAppend();
+						}
+						return false;						
+					};
+				}
+				
+				for (var i=0; i<oInput_length; i+=1) {
+					oInput[i].onchange = function() {
+						var id = this.id, num = parseInt(this.value, 10) || 0;
+						if(num >= 0){
+							self.json.goods[id].num = num;
+							self.htmlAppend();
+						}
+						return false;
+					};
+				}
+				// for(var i = 0; i < add_length; i += 1){
+				// 	add[i].onclick = function(){
+
+				// 	};
+				// }
+				// for(var i = 0; i < move_length; i += 1){
+				// 	move[i].onclick = function(){
+						
+				// 	};
+				// }
+				// for(var i = 0; i < input_length; i += 1){
+				// 	input[i].onchange = function(){
+
+				// 	};
+				// }
+				return this;
+			},
+
+
+			htmlAppend: function() {
+				this.$("shop_car").innerHTML = this.htmlList();
+				this.eventBind();
+				return this;
+			},
+			init: function() {
+				this.json = data;
+				this.htmlAppend();
+			}
+        }
+    	object.init();
     </script>
 </body>
 </html>
