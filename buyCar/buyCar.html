@@ -103,7 +103,7 @@
 		<div class="amount">
 			总计：<span class="amountMoney">139</span> 元
 		</div>
-		<div class="payBtn">微信支付</div>
+		<div class="payBtn" onclick="payClick()">微信支付</div>
 	</div>
 	<div class="loading">正在玩命加载中...</div>
 	<div id="modalDiv">
@@ -115,6 +115,19 @@
     	<div class="doButton">
     		<button class="no" id= "no" >取消</button>
     		<button class="ok" id = "ok">确定</button>
+    	</div>
+    </div>
+    <div id="modal-pay-box">
+    	<div class="warnMsg">
+			<span>支付情况模拟</span>    		
+    	</div>
+    	<div class="doButton">
+	    	<button class="ok" id="pay_fail">
+	    		<span>支付成功</span>
+	    	</button>
+	    	<button class="no" id="pay_success">
+	    		<span>支付失败</span>
+	    	</button>
     	</div>
     </div>
     <script type="text/javascript">
@@ -293,6 +306,32 @@
 			get("shop_car").innerHTML = this.htmlList();
 			eventBind();
 			return this;
+		}
+
+		function payClick() {
+			/*
+	        传递一个变量判断是否支付成功
+	        并且把json的数据传递  
+	        */
+			var windowHeight=document.body.scrollHeight;
+			var modal = document.getElementById("modalDiv");
+			var modal_pay_box = document.getElementById("modal-pay-box");
+			var success = document.getElementById("pay_success");
+			var fail = document.getElementById("pay_fail");
+			modal.style.display = "block";
+            modal.style.height = windowHeight + "px";
+            //设置其透明度为40%
+            modal.style.filter="alpha(opacity=40)";
+            modal.style.opacity="0.40";
+			modal_pay_box.style.display = "block";
+			success.onclick = function(){
+				document.getElementById("modalDiv").style.display="none";
+	            document.getElementById("modal-pay-box").style.display="none";
+			};
+			fail.onclick = function() {
+				document.getElementById("modalDiv").style.display="none";
+	            document.getElementById("modal-pay-box").style.display="none";
+			};
 		}
 		htmlAppend();
     </script>
