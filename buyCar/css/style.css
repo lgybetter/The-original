@@ -346,17 +346,13 @@ to {height:1.8rem;width: 4.5rem;}
 
 }
 
-@keyframes boxmovein
-{
-from {height:1rem;width:2.5rem;}
-to {height:1.8rem;width: 4.5rem;}
-}
+
 
 
 .warnMsg
 {
 	padding-top: 0.5em;
-	font-size: 0.2rem;
+	font-size: 0.23rem;
 	text-align: center;
 	height: 0.7rem;
 	line-height: 0.7rem;
@@ -429,4 +425,31 @@ to {height:1.8rem;width: 4.5rem;}
 	width: 0.32rem;
 	height: 0.32rem;
 
+}
+
+#modal-no-check-box
+{
+	display: none;
+	left: 0;
+	right: 0;
+	bottom: 1.4rem;
+	margin: auto;
+	z-index: 2000;
+	position: fixed;
+	width: 2rem;
+	height: 0.6rem;
+	background-color: gray;
+	border-radius: 0.1rem;
+}
+
+
+
+.no-check
+{
+	color: white;
+	font-size: 0.01rem;	
+	text-align: center;
+	width: 2rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
 }
