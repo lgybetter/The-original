@@ -33,7 +33,7 @@
 			<div class="addMore">展开更多收获地址 ∨</div>
 		</div>
 		<div class="amount">
-			总计：<span class="amountMoney">139</span> 元
+			总计：<span class="amountMoney" id="amountMoney">139</span> 元
 		</div>
 		<div class="payBtn" onclick="payClick()">微信支付</div>
 	</div>
@@ -64,7 +64,7 @@
     </div>
     <div id="modal-no-check-box">
     	<div class="no-check">
-			<span>请勾选你要的商品</span>    		
+			<span>请勾选支付的商品</span>    		
     	</div>
     </div>
     <script type="text/javascript">
@@ -77,7 +77,7 @@
 				"000001": { check:0, name: "榛子", price: 299,  num: 6, size: "5斤/箱", price_del: 120},
 				"000002": { check:0, name: "瓜子", price: 949,  num: 1, size: "5斤/箱", price_del: 120},
 				"000003": { check:0, name: "奶酥", price: 99,  num: 7, size: "5斤/箱", price_del: 120},
-				"000004": { check:0, name: "奶豆", price: 929,  num: 9, size: "5斤/箱", price_del: 120}
+				"000004": { check:1, name: "奶豆", price: 929,  num: 9, size: "5斤/箱", price_del: 120}
 			}
 		};
     	//对模态框进行加载
@@ -206,6 +206,7 @@
 		//添加列表选项到html里面
 		function htmlAppend() {
 			get("shop_car").innerHTML = this.htmlList();
+			addMoney();
 			var item = getByClassArray("item-box");
 			var item_length = item.length;
 			for(var i = 0; i < item_length; i += 1) {
@@ -305,6 +306,20 @@
 				}
 			}
 			return false;
+		}
+
+		function addMoney() {
+			var amountMoney = document.getElementById("amountMoney");
+			var money_sum = 0;
+			for(id in data.goods)
+			{
+				if(data.goods[id].check == 1)
+				{
+					money_sum += data.goods[id].price * data.goods[id].num;
+				}
+			}
+			amountMoney.innerHTML = money_sum;
+			console.log(money_sum); 
 		}
 		htmlAppend();
     </script>
