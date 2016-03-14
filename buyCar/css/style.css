@@ -417,12 +417,11 @@ to {height:1.8rem;width: 4.5rem;}
 	padding-right: 0.1rem;
 }
 
-.item-select div
+.item-box
 {
 	float: left;
 	position: absolute;
 	border-radius: 50%;
-	background-color: white;
 	box-shadow: 0px 0px 0.06rem 0.06rem #e8e9e9;
 	top: 0;
 	bottom: 0;

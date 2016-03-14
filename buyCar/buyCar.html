@@ -21,74 +21,6 @@
 	<div class="main">
 		<div class="content">
 			<ul id="shop_car">
-            	<!-- <li class="ui-list-item">
-                	<div class="ui-list-item-inner">
-                		<div class="item-select" >
-                			<div id="1" onclick="javascript:selectItem(this);"></div>
-                		</div>
-	                    <a href="product-655078-90301321.html?rbc=url_cart" class="ui-list-item-thumb">
-	                        <img src="images/pro-img.jpg" data-brandlazy="true" style="display: inline;">
-	                    </a>
-	                    <div class="ui-list-item-info">
-	                        <a href="product-655078-90301321.html?rbc=url_cart" class="meta">
-	                            <h4 class="title">马水桔</h4>
-	                            <p>规格: 5斤/箱</p>
-	                        </a>
-
-	                        <div class="stock clearfix">
-		                        <a href="" class="ui-button addBtn">
-		                        	<img src="images/add.png">
-		                        </a>
-		                        <span>1</span>
-		                        <input class="amount-num" type="text" readonly="readonly" value="1" name="num">
-		                        <a href="" class="ui-button moveBtn">
-		                        <img src="images/move.png">
-		                        </a>
-		                    </div>
-		                    <a href="javascipt:void(0);" class="close" onclick="openNewDiv()">
-                        		<img src="images/del.png">
-                        	</a>
-	                        <a href="product-655078-90301321.html?rbc=url_cart" class="price">
-	                            <span class="original-price">￥99.00</span>
-	                            <del>￥120.00</del>
-	                        </a>
-	                    </div>
-                	</div>
-            	</li>
-            	<li class="ui-list-item">
-                	<div class="ui-list-item-inner">
-                		<div class="item-select" >
-                			<div id="2" onclick="javascript:selectItem(this);"></div>
-                		</div>
-	                    <a href="product-655078-90301321.html?rbc=url_cart" class="ui-list-item-thumb">
-	                        <img src="images/pro-img.jpg" data-brandlazy="true" style="display: inline;">
-	                    </a>
-	                    <div class="ui-list-item-info">
-	                        <a href="product-655078-90301321.html?rbc=url_cart" class="meta">
-	                            <h4 class="title">马水桔</h4>
-	                            <p>规格: 5斤/箱</p>
-	                        </a>
-
-	                        <div class="stock clearfix">
-		                        <a href="" class="ui-button addBtn">
-		                        	<img src="images/add.png">
-		                        </a>
-		                        <span>1</span>
-		                        <input class="amount-num" type="text" readonly="readonly" value="1" name="num">
-		                        <a href="" class="ui-button moveBtn">
-		                        <img src="images/move.png">
-		                        </a>
-		                    </div>
-		                    <a href="javascipt:void(0);" class="close" onclick="openNewDiv()">
-		                        <img src="images/del.png">
-		                    </a>
-	                        <a href="product-655078-90301321.html?rbc=url_cart" class="price">
-	                            <span class="original-price">￥99.00</span>
-	                            <del>￥120.00</del>
-	                        </a>
-	                    </div>
-                	</div>
-            	</li> -->
             </ul>
 		</div>
 		<div class="extraInfo"></div>
@@ -132,11 +64,11 @@
     </div>
     <script type="text/javascript">
         var data = {
-			"000000": { check:0, name: "松子", price: 199,  num: 3, size: "5斤/箱", price_del: 120},
+			"000000": { check:1, name: "松子", price: 199,  num: 3, size: "5斤/箱", price_del: 120},
 			"000001": { check:0, name: "榛子", price: 299,  num: 6, size: "5斤/箱", price_del: 120},
-			"000002": { check:0, name: "瓜子", price: 949,  num: 1, size: "5斤/箱", price_del: 120},
+			"000002": { check:1, name: "瓜子", price: 949,  num: 1, size: "5斤/箱", price_del: 120},
 			"000003": { check:0, name: "奶酥", price: 99,  num: 7, size: "5斤/箱", price_del: 120},
-			"000004": { check:0, name: "奶豆", price: 929,  num: 9, size: "5斤/箱", price_del: 120}
+			"000004": { check:1, name: "奶豆", price: 929,  num: 9, size: "5斤/箱", price_del: 120}
 		};
     	var selectFlag = new Array();
     	function openNewDiv(e) {
@@ -169,22 +101,21 @@
             }
 
         }
-        // function dismissModal() {
-        //     document.getElementById("modalDiv").style.display="none";
-        //     document.getElementById("modal-delete-box").style.display="none";
-        // }
         function selectItem(e) {
         	// console.log(e.id);
+        	var self = this;
        		var id = e.id;
         	if(data[id].check == 1)
         	{
         		data[id].check = 0;
         		console.log(data[id].check);
+        		self.htmlAppend();
         	}
         	else
         	{
         		data[id].check = 1;
         		console.log(data[id].check);
+        		self.htmlAppend();
         	}
         }
 
@@ -193,26 +124,11 @@
 		}
 		function htmlList() {
 			var json = data, html = "";
-			for (id in json) { 
-				// var cl = "";
-				// if (json[id].num) {
-				// 	cl = "cho_list_on";
-				// 	choosed ++ ;
-				// } else {
-				// 	if (!window.XMLHttpRequest) {
-				// 		cl = "cho_list_hover";
-				// 	}	
-				// }
-				// html += '<ul class="fix cho_list '+ cl +'">' +
-				// 	'<li class="cho_list_li">'+ json[id].name + '</li>' +
-				// 	'<li class="cho_list_li tc g6">'+ json[id].price + json[id].units +'</li>' +
-				// 	'<li class="cho_list_li tc">'+ this.htmlBtn(json[id].num, id) +'</li>' +
-				// '</ul>';
-
+			for (id in json) {
 				html += '<li class="ui-list-item">' + 
 					'<div class="ui-list-item-inner">'+
 						'<div class="item-select" >' + 
-							'<div id="' + id + '" onclick = "javascript:selectItem(this);">' + 
+							'<div class="item-box" id="' + id + '" onclick = "javascript:selectItem(this);">' + 
 							'</div>' +
 						'</div>' + 
 						'<a href="" class="ui-list-item-thumb">' +
@@ -249,13 +165,8 @@
 			
 		function eventBind() {
 			var self = this;
-			// var add = document.getElementById("addBtn") , add_length = add.length;
-			// var move = document.getElementById("moveBtn") , move_length = move.length;
 			var oA = document.getElementsByTagName("a"), oA_length = oA.length;
-			var oInput = document.getElementsByTagName("input"), oInput_length = oInput.length;
-			// var delete_goods = document.getElementById("delete_goods"), delete_length = delete_goods.length;
-			// var input = document.getElementById("input_num") , input_length = input.length;
-			
+			var oInput = document.getElementsByTagName("input"), oInput_length = oInput.length;		
 			for (var i=0; i<oA_length; i+=1) {
 				oA[i].onclick = function() {
 					var id = this.id, num = parseInt(this.rel, 10) || 0;
@@ -277,33 +188,25 @@
 					return false;
 				};
 			}
-
-				// for(var i = 0; i < delete_length; i +=1){
-				// 	delete_goods[i].onclick = function(){
-
-				// 	}
-				// }
-				// for(var i = 0; i < add_length; i += 1){
-				// 	add[i].onclick = function(){
-
-				// 	};
-				// }
-				// for(var i = 0; i < move_length; i += 1){
-				// 	move[i].onclick = function(){
-						
-				// 	};
-				// }
-				// for(var i = 0; i < input_length; i += 1){
-				// 	input[i].onchange = function(){
-
-				// 	};
-				// }
 			return this;
 		}
 
 
 		function htmlAppend() {
 			get("shop_car").innerHTML = this.htmlList();
+			var item = getByClassArray("item-box");
+			var item_length = item.length;
+			for(var i = 0; i < item_length; i += 1) {
+				var id = item[i].id; 
+				if(data[id].check == 0)
+				{
+					item[i].style.backgroundColor = "#" + "ffffff";
+				}
+				else
+				{
+					item[i].style.backgroundColor = "#" + "7bbd24";
+				}
+			}
 			eventBind();
 			return this;
 		}
@@ -318,20 +221,64 @@
 			var modal_pay_box = document.getElementById("modal-pay-box");
 			var success = document.getElementById("pay_success");
 			var fail = document.getElementById("pay_fail");
-			modal.style.display = "block";
-            modal.style.height = windowHeight + "px";
-            //设置其透明度为40%
-            modal.style.filter="alpha(opacity=40)";
-            modal.style.opacity="0.40";
-			modal_pay_box.style.display = "block";
-			success.onclick = function(){
-				document.getElementById("modalDiv").style.display="none";
-	            document.getElementById("modal-pay-box").style.display="none";
-			};
-			fail.onclick = function() {
-				document.getElementById("modalDiv").style.display="none";
-	            document.getElementById("modal-pay-box").style.display="none";
-			};
+			var isSelect = selectItemDepend();
+			if(isSelect)
+			{
+				modal.style.display = "block";
+	            modal.style.height = windowHeight + "px";
+	            //设置其透明度为40%
+	            modal.style.filter="alpha(opacity=40)";
+	            modal.style.opacity="0.40";
+				modal_pay_box.style.display = "block";
+				success.onclick = function(){
+					document.getElementById("modalDiv").style.display="none";
+		            document.getElementById("modal-pay-box").style.display="none";
+				};
+				fail.onclick = function() {
+					document.getElementById("modalDiv").style.display="none";
+		            document.getElementById("modal-pay-box").style.display="none";
+				};
+			}
+			else
+			{
+				console.log("未选择任何选项");
+			}
+		}
+
+		function getByClass(sClass) {
+		    var aResult=[];
+		    var aEle=document.getElementsByTagName('*');
+		    for(var i=0;i<aEle.length;i++){
+		       /*当className相等时添加到数组中*/
+		       	if(aEle[i].className==sClass) {
+		            aResult.push(aEle[i]);
+		        }
+		    }
+	    	return aResult;
+		};
+
+		function getByClassArray(sClass){
+		    var aResult=[];
+		    var aEle=document.getElementsByTagName('*');
+		    /*正则模式*/
+		    var re=new RegExp("\\b" + sClass + "\\b","g");
+		    for(var i=0;i<aEle.length;i++){
+		        /*字符串search方法判断是否存在匹配*/
+		        if(aEle[i].className.search(re) != -1){
+		            aResult.push(aEle[i]);
+		        }
+		    }
+		    return aResult;
+		};
+		function selectItemDepend(){
+			for(id in data)
+			{
+				if(data[id].check == 1)
+				{
+					return true;
+				}
+			}
+			return false;
 		}
 		htmlAppend();
     </script>
