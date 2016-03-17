@@ -152,13 +152,13 @@
                 <label>数量</label>
             </div>
             <div class="number-control">
-                <button type="button" class="decrease">-</button>
-                <input  class="num" value="1" min="1" max="93">
-                <button type="button" class="increase">+</button>
+                <button type="button" class="decrease" onclick="subnum()">-</button>
+                <input  class="num" value="0" min="1" max="93" id="num_input">
+                <button type="button" class="increase" onclick="addnum()">+</button>
             </div>
         </div>
         <div class="item-commit">
-            <button class="ok-button">
+            <button class="ok-button" onclick="commit()">
             	<span>确定</span>
             </button>
         </div>
@@ -233,43 +233,37 @@
             modal.style.filter="alpha(opacity=40)";
             modal.style.opacity="0.40";
             modal.style.zIndex="2";
-            //这里取出当前窗口的长与宽。兼容各个浏览器，有滚动条没有滚动条的情况。
-            //你在我的模态框出现的时候，又调整窗口，可能取不到调整窗口之后的大小，那我没办法了，我没理由开个函数去不停地轮询你是否调整窗口吧？
-            // var windowWidth=document.body.scrollWidth;
-            // var windowHeight=document.body.scrollHeight;
-            // //先把模态框显示出来，再利用offsetWidth与offsetHeight取其长与宽
-            // //offsetWidth与offsetHeight是可见区域的大小，尽管modalDiv没有设置height样式，但同样可以利用这种方式取其高
-            // document.getElementById("modalDiv").style.display="block";
-            // var modalDivWidth=document.getElementById("modalDiv").offsetWidth;
-            // var modalDivHeight=document.getElementById("modalDiv").offsetHeight;
-            // //这里定位modalDiv主要是为了使其居中
-            // document.getElementById("modalDiv").style.left=(windowWidth-modalDivWidth)/2+"px";
-            // document.getElementById("modalDiv").style.bottom=0;
-            
-            // //modalDiv的动作搞完了，搞那个灰色遮罩div，先创建一个节点。
-            // var bodyMask=document.createElement("div");
-            // bodyMask.id="bodyMask";
-            // bodyMask.style.position="absolute";
-            // //如果你的网页中还有其它zIndex，那么，这个只应该大于其它zindex，同时上面的模态框的zindex，应该比这个zindex大1
-            // bodyMask.style.zIndex="1";
-            // //这个灰色遮罩层的长与宽就是当前窗口的长与宽。
-            // bodyMask.style.width=windowWidth + "px";
-            // bodyMask.style.height=windowHeight + "px";
-            // bodyMask.style.top="0px";
-            // bodyMask.style.left="0px";
-            // bodyMask.style.background="#000";
-            // //设置其透明度为40%
-            // bodyMask.style.filter="alpha(opacity=40)";
-            // bodyMask.style.opacity="0.40";
-            // //在body节点下添加这个div
-            // document.body.appendChild(bodyMask);
         }
         //关闭模态框就两步，使模态框隐藏同时移除bodyMask
         function dismissModal() {
             document.getElementById("modal-box").style.display="none";
             document.getElementById("modalDiv").style.display="none";
         }
+        var num_input = document.getElementById("num_input");
+        function addnum() {
+        	var now_value = parseInt(num_input.value, 10);
+        	num_input.value = now_value + 1; 
+        }
 
+        function subnum() {
+        	var now_value =  parseInt(num_input.value, 10);
+        	num_input.value = now_value - 1; 
+        }
+
+        function commit() {
+        	var json = data.goods;
+        	var id = "product";
+        	json[id].count = parseInt(num_input.value, 10);
+        	console.log(json[id].count);
+        	/*
+        	跳转到另一个界面并传递json数据
+        	*/
+        }
+        var data = {
+			goods: {
+				"product": {cusOpenid:"123456",pSn:"000000",count:"1"}
+			}
+		};
 	</script>
 </body>
 </html>
