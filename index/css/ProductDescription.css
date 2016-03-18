@@ -380,3 +380,77 @@ to {height:3.5rem;}
     line-height: 100%;
     color: white;
 }
+
+.detail-box1
+{
+    position: relative;
+    width: 100%;
+    height: 0.4rem;
+    color: #f4aaad;
+    margin-top: 0.6rem;
+}
+
+
+.product_name
+{
+    text-align: center;
+    position: relative;
+    float: left;
+    font-size: 0.17rem;
+    width: 50%;
+}
+
+.product_size
+{
+    text-align: center;
+    width: 50%;
+    position: relative;
+    float: left;
+    font-size: 0.17rem;
+}
+
+
+.detail-box2
+{
+    color: #f4aaad;
+    position: relative;
+    width: 100%;
+    height: 0.4rem;
+    margin-top: 0.1rem;
+}
+
+.product_original
+{
+    text-align: center;
+    width: 50%;
+    position: relative;
+    float: left;
+    font-size: 0.17rem;
+}
+
+.product_function
+{
+    text-align: center;
+    width: 50%;
+    position: relative;
+    float: left;
+    font-size: 0.17rem;
+}
+
+.detail-box3
+{
+    position: relative;
+    width: 100%;
+    height: 0.4rem;
+    margin-top: 0.1rem;
+    color: #f4aaad;
+}
+
+.save_date
+{
+    text-align: center;
+    width: 50%;
+    position: relative;
+    float: left;
+    font-size: 0.17rem;
+}
