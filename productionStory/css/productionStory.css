@@ -1,0 +1,59 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: "Microsoft Yahei";	
+}
+
+html {
+    font-size: 15.625vw;
+}
+
+@media screen and (min-width: 640px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+.main
+{
+	background: url('../images/background_ProductStory.jpg') repeat-y center center;
+    background-size: 100%;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+}
+
+.main-title
+{
+	position: relative;
+	color: red;
+	width: 100%;
+	text-align: center;
+	font-size: 0.34rem;
+}
+
+.second-title
+{
+	position: relative;
+	width: 100%;
+	color: red;
+	padding-left: 0.5rem;
+	font-size: 0.28rem;
+}
+
+.third-title
+{
+	position: relative;
+	width: 100%;
+	padding-left: 0.5rem;
+	font-size: 0.23rem;
+}
+
+.paragraph
+{
+	position: relative;
+	width: 100%;
+	padding-left: 0.5rem;
+	font-size: 0.2rem;
+}

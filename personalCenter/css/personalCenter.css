@@ -1,0 +1,132 @@
+*
+{
+    font-family: 'Microsoft Yahei';
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html body
+{
+    height: 100%;
+}
+html
+{
+    font-size: 15.625vw;
+}
+
+@media screen and (min-width: 640px){
+    html
+    {
+        font-size: 100px;
+    }
+}
+
+.main
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background_ProductDescription.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+}
+
+
+.production_photo
+{
+    display: inline-block;
+    position: relative;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-top: 0.63rem;
+}
+
+.production_title
+{
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 0.3rem;
+    margin-top: 0.2rem;
+    color: #656565;
+}
+
+.button_box
+{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0.66rem;
+    margin-top: 1rem;
+}
+
+.item1
+{
+    text-align: center;
+    line-height: 0.66rem;
+    width: 1.85rem;
+    height: 0.66rem;
+    display: block;
+    position: relative;
+    float: left;
+    font-size: 0.25rem;
+    color: #acadad;
+    background-color: #d9dada;
+    border-radius: 0.15rem;
+    box-shadow: 0px 0.03rem 0.01rem 0.01rem #a2a4a4;
+    margin-left: 0.3rem;
+}
+
+.item2
+{
+    text-align: center;
+    line-height: 0.66rem;
+    width: 1.85rem;
+    height: 0.66rem;
+    display: block;
+    position: relative;
+    float: left;
+    font-size: 0.25rem;
+    color: #acadad;
+    background-color: #d9dada;
+    border-radius: 0.15rem;
+    box-shadow: 0px 0.03rem 0.01rem 0.01rem #a2a4a4;
+    margin-left: 0.12rem;
+}
+
+.item3
+{
+    text-align: center;
+    line-height: 0.66rem;
+    width: 1.85rem;
+    height: 0.66rem;
+    display: block;
+    position: relative;
+    float: left;
+    font-size: 0.25rem;
+    color: #acadad;
+    background-color: #d9dada;
+    border-radius: 0.15rem;
+    box-shadow: 0px 0.03rem 0.01rem 0.01rem #a2a4a4;
+    margin-left: 0.12rem;
+}
+
+.exit_button
+{
+    width: 4.3rem;
+    position: relative;
+    display: inline-block;
+    height: 0.66rem;
+    font-size: 0.22rem;
+    color: #e2aaad;
+    background-color: #cb0010;
+    box-shadow: 0px 0.03rem 0.01rem 0.01rem #855257;
+    text-align: center;
+    line-height: 0.66rem;
+    border-radius: 0.12rem;
+    margin-top: 2.6rem;
+}
