@@ -12,20 +12,56 @@
 <link rel="stylesheet" type="text/css" href="css/normal.css">
 <link rel="stylesheet" type="text/css" href="css/productionStory.css">
 </head>
-    <div class="main">
-        <div class="main-title">
-            <span>被偷走的人生</span>
-        </div>
-        <div class="second-title">
-            <span>颐和园游记</span>
-        </div>
-        <div class="third-title">
-            <span>一·&nbsp&nbsp&nbsp&nbsp奥运会的机会</span>
-        </div>
-        <div class="paragraph">
-            <p>&nbsp&nbsp&nbsp&nbsp从东宫门进了颐和园，正对面就是仁寿殿。我对宫殿不感兴趣，急着想看其他东西，简单看了看雕刻出来的龙和凤，就拐上了一条山路。这条山路蜿蜿蜒蜒的，看不到头，我一马当先地冲在前面，碰到岔路，就跑去报告爸爸，由爸爸决定怎么走。走到后来，我都累坏了，才来到苏州街。</p>
-        </div>
-        <div class="photo">
-        </div>
-    </div>
+	<body>
+	    <div class="main" id="main">
+	    </div>
+	</body>
+	<script type="text/javascript">
+		var data = {
+			//type{0:main-title,1:second-title,2:third-title,3:paragraph,4:photo}
+        	content: {
+				"000000": { type:0, text: "马水桔的故事"},
+				"000001": { type:1, text: "马水桔功效"},
+				"000002": { type:2, text: "一、&nbsp&nbsp&nbsp&nbsp清热"},
+				"000003": { type:3, text: "马水桔性味甘凉，有清热解毒的功效。四季都可以食用，所含的有机酸和维生素，从而降低清热解毒的功效。"},
+				"000004": { type:2, text: "二、&nbsp&nbsp&nbsp&nbsp养颜"},
+				"000005": { type:3, text: "早晨吃马水桔治便秘。多食还能阻止体内产生过多的过氧化物，防止老年斑的形成，延缓人体衰老。冬天常吃马水桔可以调节人体机能，增强抵抗力，补充人体需要的营养。"},
+				"000006": { type:1, text: "马水桔的来源"},
+				"000007": { type:4, address:"images/photo1.jpg"},
+				"000008": { type:4, address:"images/photo2.jpg"},
+				"000009": { type:4, address:"images/photo3.jpg"},
+				"000010": { type:3, text: "马水桔，产于阳春市马水镇而得名。据史书记载，马水桔又称阳春马水桔。"},
+				"000011": { type:3, text: " 甜桔，它原产于阳春市马水镇塘岩村，此地都是漠阳江畔的积层，半沙泥土层深至几米，土质粒细、松软、肥沃，十分适宜桔树生长。"}
+			}
+		};
+
+
+		function htmlList() {
+			var json = data.content, html = "";
+			for (id in json) {
+				if(json[id].type == 0) {
+					html += '<div class="main-title">' + '<span>'+json[id].text+'</span>' + '</div>';
+				} else if(json[id].type == 1) {
+					html += '<div class="second-title">' + '<span>'+json[id].text+'</span>'+'</div>';
+				} else if(json[id].type == 2) {
+					html += '<div class="third-title">' + '<span>'+json[id].text+'</span>' +'</div>';
+				} else if(json[id].type == 3) {
+					html += '<div class="paragraph">' + '<span>' + json[id].text + '</span>' + '</div>';
+				} else if(json[id].type == 4) {
+					html += '<div class="photo_near_to_photo">' + '<img src="'+ json[id].address +'" height="100%" width="100%">' + '</div>';
+				}
+			}
+			html += '<div class="bottom-button">' + '<span>' +'立即购买'+'</span>' + '</div>'; 
+			return html;
+		}
+
+		function htmlAppend() {
+			get("main").innerHTML = this.htmlList();
+			return this;
+		}
+		function get(id) {
+			return document.getElementById(id);
+		}
+		htmlAppend();
+	</script>
 </html>
