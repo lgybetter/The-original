@@ -15,6 +15,16 @@ html {
     }
 }
 
+body{
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none; 
+}
 .main
 {
 	background: url('../images/background_ProductDescription.jpg') repeat-y center center;
@@ -125,13 +135,31 @@ html {
 {
     width: 100%;
     height: 16.0rem;
+    position: relative;
 }
 .bottom-button-car
 {
 	bottom: 0;
+    position: relative;
     width: 100%;
     overflow: hidden;
 }
+
+
+.element
+{ 
+    width: 0.35rem; 
+    height: 0.35rem; 
+    display: none;
+    position: absolute; 
+    right:2rem;
+    bottom: 1.5rem;
+    border: 1px solid #34538b;
+    border-radius: 20px;
+    background-color: #34538b; 
+    pointer-events: none;
+}
+
 .item2-1
 {
     float: left;
@@ -454,3 +482,4 @@ to {height:3.5rem;}
     float: left;
     font-size: 0.17rem;
 }
+
