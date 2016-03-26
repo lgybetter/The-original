@@ -68,3 +68,16 @@ html,body {
 	height: 1.6rem;
 }
 
+.turn_To_FirstView {
+	position: absolute;
+	margin-top: 0.5rem;
+	margin-left: 0.3rem;
+	width:0.7rem;
+	height:0.7rem;
+	font-size: 0.1rem;
+	text-align: center;
+	line-height: 0.7rem;
+	background-color: blue;
+	border-radius: 50%;
+	color: white;
+}

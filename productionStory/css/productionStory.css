@@ -28,6 +28,22 @@ body
     margin: 0;
 }
 
+.turn_To_FirstView {
+	position: fixed;
+	z-index: 99999;
+	margin-top: 0.5rem;
+	margin-left: 0.3rem;
+	width:0.7rem;
+	height:0.7rem;
+	font-size: 0.1rem;
+	text-align: center;
+	line-height: 0.7rem;
+	background-color: blue;
+	border-radius: 50%;
+	color: white;
+}
+
+
 .main-title
 {
 	position: relative;

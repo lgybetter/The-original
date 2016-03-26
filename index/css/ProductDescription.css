@@ -34,6 +34,22 @@ body{
     margin: 0;
 }
 
+.turn_To_FirstView {
+    position: fixed;
+    margin-top: 0.5rem;
+    margin-left: 0.3rem;
+    width:0.7rem;
+    height:0.7rem;
+    font-size: 0.1rem;
+    text-align: center;
+    line-height: 0.7rem;
+    background-color: blue;
+    border-radius: 50%;
+    color: white;
+    z-index: 999999;
+}
+
+
 .description-box
 {
 	margin-top: 0.95rem;
@@ -302,6 +318,7 @@ to {height:3.5rem;}
     height: 0.6rem;
     display: block;
     float: left; 
+    font-size: 0.25rem;
 }
 
 .item-commit
@@ -350,7 +367,7 @@ to {height:3.5rem;}
     letter-spacing: 0;
     width: 2rem;
     overflow: hidden;
-    border: 1px solid #b3b3b3;
+    border: 2px solid #b3b3b3;
 }
 
 .decrease
@@ -361,7 +378,7 @@ to {height:3.5rem;}
     width: 0.4rem;
     height: 0.4rem;
     text-align: center;
-    border-right: 1px solid #b3b3b3;
+    border-right: 2px solid #b3b3b3;
     background-color: white;
     font-weight: 900;
 }
@@ -384,7 +401,7 @@ to {height:3.5rem;}
     float: left;
     width: 0.4rem;
     height: 0.4rem;
-    border-left: 1px solid #b3b3b3;
+    border-left: 2px solid #b3b3b3;
     background-color: white;
     margin: 0px;
 }
