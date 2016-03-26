@@ -159,6 +159,7 @@
                 </div>
             </div>
             <a class="sback" onclick="dismissModal()">
+            	<span>×</span>
             </a>   
         </div>
         <div class="standard">
@@ -176,7 +177,7 @@
             </div>
             <div class="number-control">
                 <button type="button" class="decrease" onclick="subnum()">-</button>
-                <input  class="num" value="0" min="1" max="93" id="num_input">
+                <input  class="num" value="1" min="1" max="93" id="num_input">
                 <button type="button" class="increase" onclick="addnum()">+</button>
             </div>
         </div>
@@ -193,7 +194,7 @@
 <script type="text/javascript">
     /*swiper的轮播图片的控制*/
 	var mySwiper = new Swiper('.swiper-container',{
-	loop: true,
+	loop: false,
     centeredSlides:!0,
     watchSlidesProgress:!0,
     pagination:".swiper-pagination",
@@ -273,14 +274,33 @@
 
     function subnum() {
     	var now_value =  parseInt(num_input.value, 10);
-    	num_input.value = now_value - 1; 
+    	if(num_input.value > 1) {
+    		num_input.value = now_value - 1; 
+    	}
     }
 
     function commit() {
+    	/* 动画修改的元素 */
+		var element = document.getElementById("element"), target = document.getElementById("target");
     	var json = data.goods;
     	var id = "product";
     	json[id].count = parseInt(num_input.value, 10);
     	console.log(json[id].count);
+    	/*
+		模态框消失
+    	*/
+    	document.getElementById("modal-box").style.display="none";
+        document.getElementById("modalDiv").style.display="none";
+    	/*
+		加载动画
+    	*/
+		// 抛物线元素的的位置标记
+		var parabola = funParabola(element, target).mark();
+		// 抛物线运动的触发
+		element.style.display = "block";
+		element.style.marginLeft = "0px";
+		element.style.marginTop = "0px";
+		parabola.init();
     	/*
     	跳转到另一个界面并传递json数据
     	*/
@@ -290,9 +310,9 @@
 			"product": {cusOpenid:"123456",pSn:"000000",count:"1"}
 		}
 	};
-
-
-
+	/*
+	抛物线动画
+	*/
 	var funParabola = function(element, target, options) {
 	/*
 	 * 网页模拟现实需要一个比例尺
@@ -374,14 +394,14 @@
 				}
 				// 移动元素的中心点坐标
 				centerElement = {
-					x: 180,
+					x: 125,
 					y: 10
 				};
 				
 				// 目标元素的中心点位置
 				centerTarget = {
 					x: 0,
-					y: 100		
+					y: 25		
 				};
 				
 				// 转换成相对坐标位置
@@ -462,18 +482,6 @@
 			};
 		}
 		return exports;
-	};
-	/* 元素 */
-	var element = document.getElementById("element"), target = document.getElementById("target");
-
-	// 抛物线元素的的位置标记
-	var parabola = funParabola(element, target).mark();
-	// 抛物线运动的触发
-	document.body.onclick = function() {
-		element.style.display = "block";
-		element.style.marginLeft = "0px";
-		element.style.marginTop = "0px";
-		parabola.init();
 	};
 </script>
 </html>
